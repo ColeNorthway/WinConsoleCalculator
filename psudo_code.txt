@@ -1,0 +1,65 @@
+Calculator Project
+<================>
+
+
+File Structure
+<------------>
+
+c++ files
+* main.cpp
+  * This will handle the presentation of the entire project for general iterations
+  * This will handle the while loop that will exit on exit ***
+  * This has the main function in it ***
+  * This has the printing of the current result and the last result 
+  * This class has a build in map for each query and result
+    * Could be a separate class with static attrib for map. (clean)
+  * Print history command recieved by this will show all the commands in a view that closes with q.
+    * This will also be a second screen kinda like vim or less
+  * Makes the calls to controller
+* arithmetic.cpp
+  * Handles all the functions that are imported into main.cpp
+  * One class to do it all
+    * Static methods for each function
+* controller.cpp
+  * Parses the statement and follows order of operations to return a final result to the main.cpp which prints the result for the user
+  * One static class with a method for recieing a string and returning an int
+  * Will do error handling and return a syntax error on bad result
+
+header files
+* arithmetic.h
+  * Declares all the constants (pi and e)
+  * sets the function prototypes for all the arithmetic
+* controller.h
+  * function protypes for parse
+
+functions
+P(funcs like log and factorials)EMDAS
+* pi
+* e
+* *
+* +
+* -
+* /
+* x! (factorial of x)
+* ()
+* x ^ y
+* sqrt(x)
+* log
+* ln
+* log10
+
+Psuedo Code
+<--------->
+
+Ui initializes --> will have the operators denoted for each iteration
+User enters a statement 
+Controller will recieve this statement
+Statement is parsed by the controller's functions
+Controller will call the arithmetic
+If statement is wrong syntax or invalid operatation (divide by zero) controller.cpp will return the associate error 
+If no error then controller will send and recieve chunks via p(func)emdas with arithmetic's class and will finally should end up with one double.
+This double finally returned to the main which prints it.
+UI should keep track of prints to only keep two on the terminal with the help for operators and p(func)emdas.
+The return will always show the previous result and the current result
+Screen autoclears or rotates to keep these done by ui.
+

@@ -1,0 +1,4 @@
+C:/Users/q/Desktop/Coding Projects/C-C++/C++/self_projects/calculator/build/CMakeFiles/calLib.dir
+C:/Users/q/Desktop/Coding Projects/C-C++/C++/self_projects/calculator/build/CMakeFiles/calculator.dir
+C:/Users/q/Desktop/Coding Projects/C-C++/C++/self_projects/calculator/build/CMakeFiles/edit_cache.dir
+C:/Users/q/Desktop/Coding Projects/C-C++/C++/self_projects/calculator/build/CMakeFiles/rebuild_cache.dir

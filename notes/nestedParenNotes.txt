@@ -1,0 +1,6 @@
+NESTED PARENTHESES
+<================>
+
+1) Separate every () at the end of the parentheses expression
+- lets cut out the rest of the checks and just be like if it finds ( len > 1 do it
+- then we gotta get back and instead of cutting that index then dropping when evaluating () we just pop front and back always to simplify in one step
