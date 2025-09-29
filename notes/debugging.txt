@@ -1,0 +1,29 @@
+debugging
+
+
+
+
+error with 
+
+5                               ERROR!
+2                                 ^
+>15 - (sqrt(49) + (10 / (5 - 3))) * (4! / 6)
+argsAtEndOfLoop|15|-|12.000000|*|4.000000|    argsAtExit|15|-|12.000000|*|4.000000|
+
+convert the parenOrder and parenMap to one map
+-
+
+
+
+( -> push len|0 to parenMap; set current priority to map
+) -> 
+
+0 1 23 4 56 7 89..
+1 + (1 + (1 + 1) + (1 + 1)) + (1 + (1 + 1))
+pri 1    2     1   2     10   1    2     10     
+len 2    5        11     
+
+
+
+then we have to pop off any values that are lower than 2
+

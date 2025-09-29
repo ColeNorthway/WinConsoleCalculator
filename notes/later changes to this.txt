@@ -1,0 +1,2 @@
+later changes to this
+- add ascii animation that runs under a separate thread

@@ -1,3 +1,4 @@
+#include "errorHandling.h"
 #include <iostream>
 #include "arithmetic.h"
 #include "controller.h"

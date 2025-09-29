@@ -173,24 +173,32 @@ wstring execute(list<wstring> &args, list<int> &argsOrder)
 			return argsArray[0];
 		}
 
-
+		pemdasMap(copyToArgs, &argsOrder);
+		int highestOrder = 7;
+		for (int value : argsOrder)
+		{
+			if (value < highestOrder && value != 0)
+			{
+				highestOrder = value;
+			}
+		}
 		//main iterator
 		//iterates, finds basic operator, evals the args, drops literal args, pushes the result in place of the expression
 		for (int i = 0; i < size; i++)
 		{
-			if (argsOrder.front() == 3)
+			if (argsOrder.front() == 3 && highestOrder == 3)
 			{
 				double arg1 = stod(wstring(argsArray[i-1].begin(), argsArray[i-1].end()));
 				double arg2 = stod(wstring(argsArray[i+1].begin(), argsArray[i+1].end()));
 				wstring result = to_wstring(multiply(arg1,arg2));
 				//going to drop these and replace with 
 				argsArray[i-1] = L"";
-				argsArray[i] = L"*";
+				argsArray[i] = L"&";
 				argsArray[i+1] = L"";
 				copyToArgs.clear();//clearing so we can fill up the right way
 				for (wstring arg : argsArray)
 				{
-					if (arg == L"*")
+					if (arg == L"&")
 					{
 						copyToArgs.push_back(result);
 					} else if (arg != L"")
@@ -201,19 +209,19 @@ wstring execute(list<wstring> &args, list<int> &argsOrder)
 				argsOrder.clear();
 				pemdasMap(copyToArgs, &argsOrder);
 				break;
-			} else if (argsOrder.front() == 4)
+			} else if (argsOrder.front() == 4 && highestOrder == 4)
 			{
 				double arg1 = stod(wstring(argsArray[i-1].begin(), argsArray[i-1].end()));
 				double arg2 = stod(wstring(argsArray[i+1].begin(), argsArray[i+1].end()));
 				wstring result = to_wstring(divide(arg1,arg2));
 				//going to drop these and replace with 
 				argsArray[i-1] = L"";
-				argsArray[i] = L"*";
+				argsArray[i] = L"&";
 				argsArray[i+1] = L"";
 				copyToArgs.clear();//clearing so we can fill up the right way
 				for (wstring arg : argsArray)
 				{
-					if (arg == L"*")
+					if (arg == L"&")
 					{
 						copyToArgs.push_back(result);
 					} else if (arg != L"")
@@ -224,19 +232,19 @@ wstring execute(list<wstring> &args, list<int> &argsOrder)
 				argsOrder.clear();
 				pemdasMap(copyToArgs, &argsOrder);
 				break;
-			} else if (argsOrder.front() == 5)
+			} else if (argsOrder.front() == 5 && highestOrder == 5)
 			{
 				double arg1 = stod(wstring(argsArray[i-1].begin(), argsArray[i-1].end()));
 				double arg2 = stod(wstring(argsArray[i+1].begin(), argsArray[i+1].end()));
 				wstring result = to_wstring(add(arg1,arg2));
 				//going to drop these and replace with 
 				argsArray[i-1] = L"";
-				argsArray[i] = L"*";
+				argsArray[i] = L"&";
 				argsArray[i+1] = L"";
 				copyToArgs.clear();//clearing so we can fill up the right way
 				for (wstring arg : argsArray)
 				{
-					if (arg == L"*")
+					if (arg == L"&")
 					{
 						copyToArgs.push_back(result);
 					} else if (arg != L"")
@@ -247,19 +255,19 @@ wstring execute(list<wstring> &args, list<int> &argsOrder)
 				argsOrder.clear();
 				pemdasMap(copyToArgs, &argsOrder);
 				break;
-			} else if (argsOrder.front() == 6)
+			} else if (argsOrder.front() == 6 && highestOrder == 6)
 			{
 				double arg1 = stod(wstring(argsArray[i-1].begin(), argsArray[i-1].end()));
 				double arg2 = stod(wstring(argsArray[i+1].begin(), argsArray[i+1].end()));
 				wstring result = to_wstring(subtract(arg1,arg2));
 				//going to drop these and replace with 
 				argsArray[i-1] = L"";
-				argsArray[i] = L"*";
+				argsArray[i] = L"&";
 				argsArray[i+1] = L"";
 				copyToArgs.clear();//clearing so we can fill up the right way
 				for (wstring arg : argsArray)
 				{
-					if (arg == L"*")
+					if (arg == L"&")
 					{
 						copyToArgs.push_back(result);
 					} else if (arg != L"")
