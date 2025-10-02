@@ -86,3 +86,7 @@
 17	1422	7811516526213943	CMakeFiles/calLib.dir/errorHandling.cpp.obj	13ba3265b4542e59
 1422	2606	7811516540266136	libcalLib.a	d3d83c901f9aa5f8
 2606	3536	7811516552105053	calculator.exe	bfc8de0385aacbe
+19	957	7811520567190028	CMakeFiles/calculator.dir/main.cpp.obj	79b16298e1d5ad0d
+957	1988	7811520576574001	calculator.exe	bfc8de0385aacbe
+17	924	7811521010536347	CMakeFiles/calculator.dir/main.cpp.obj	79b16298e1d5ad0d
+924	1954	7811521019600781	calculator.exe	bfc8de0385aacbe

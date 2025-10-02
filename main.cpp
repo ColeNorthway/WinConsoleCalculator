@@ -100,7 +100,7 @@ int main()
 	wstring args;
 	
 	//sets the help
-	wcout << CSI << L"35m" << L"parentheses are allowed\nExample: 1 + (1 + 1)\nExample: 1 / sqrt(4) - (1 + (1 + 1))\nmultiplication = *\ndivision = \\\naddition = +\nsubtraction = -\nfactorials = x!\nexponentials = x^y\nsquare roots = sqrt(x)\nlog of x = log(x)(y)\nnatural log = ln(x)\nlog base 10 = log10(x)\n" << RESET;
+	wcout << CSI << L"35m" << L"parentheses are allowed\nExample: 1 + (1 + 1)\nExample: 1 / sqrt(4) - (1 + (1 + 1))\nmultiplication = *\ndivision = \\\naddition = +\nsubtraction = -\nfactorials = x!\nexponentials = x^y\nsquare roots = sqrt(x)\nlog base x of y = log(x)(y)\nnatural log = ln(x)\nlog base 10 = log10(x)\n" << RESET;
 
 	while (true)
 	{
