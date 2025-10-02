@@ -173,13 +173,13 @@ void pemdasMap(list<wstring> sepArgs, list<int>* sepArgsOrderPtr)
 			sepArgsOrderPtr->push_back(3);
 		} else if (*currentString == L"/")
 		{
-			sepArgsOrderPtr->push_back(4);
+			sepArgsOrderPtr->push_back(3);
 		} else if (*currentString == L"+")
 		{
-			sepArgsOrderPtr->push_back(5);
+			sepArgsOrderPtr->push_back(4);
 		} else if (*currentString == L"-")
 		{
-			sepArgsOrderPtr->push_back(6);
+			sepArgsOrderPtr->push_back(4);
 		} else 
 		{
 			sepArgsOrderPtr->push_back(0);
@@ -216,7 +216,7 @@ wstring parenthesesConvert(list<wstring> &sepArgs, list<int> &sepArgsOrder)
 mainLoop:
 	//first highest priority index
 	auto parenFirst = parenMap.begin();
-	for (auto currentString = sepArgs.begin(); currentString  != sepArgs.end(); ++currentString)
+	for (auto currentString = sepArgs.begin(); currentString != sepArgs.end(); ++currentString)
 	{
 		//tracking len
 		len++;
@@ -295,7 +295,6 @@ wstring parse(wstring args)
 	wstring result;
 	//doing format checks
 	bool isValid = formatCheck(args);
-	isValid = charChecker(args);
 	if (isValid == false)
 	{
 		result = args;
@@ -307,18 +306,23 @@ wstring parse(wstring args)
 	list<int> sepArgsOrder;
 	//getting that final form for the args w/ de ()
 	list<wstring> finalSepArgs = funcParenFormat(&sepArgs);
-	//doing parentheses checks on finalSepArgs
-	isValid = parenNumberCheck(finalSepArgs);
-	isValid = parenOrderCheck(finalSepArgs);
-	isValid = parenSplitCheck(finalSepArgs);
-	if (isValid == false)
+	
+	//doing space checks
+	bool spaceValidity = spaceCheck(finalSepArgs, result);
+	if (!spaceValidity)
 	{
-		result = args;
+		return result;
+	}
+
+	//doing parentheses checks on finalSepArgs
+	bool parenValidity = parenCheck(finalSepArgs, result);
+	if (parenValidity == false)
+	{
 		return result;
 	}
 
 	pemdasMap(finalSepArgs, &sepArgsOrder);
-
+	
 	//execute the args and return the result
 	result = parenthesesConvert(finalSepArgs, sepArgsOrder);
 	return result;

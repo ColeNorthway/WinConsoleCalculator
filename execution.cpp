@@ -1,3 +1,4 @@
+#include <iostream>
 #include <list>
 #include <string>
 #include "controller.h"
@@ -174,10 +175,10 @@ wstring execute(list<wstring> &args, list<int> &argsOrder)
 		}
 
 		pemdasMap(copyToArgs, &argsOrder);
-		int highestOrder = 7;
+		int highestOrder = 5;
 		for (int value : argsOrder)
 		{
-			if (value < highestOrder && value != 0)
+			if (value < highestOrder && value != 0 && value != 1 && value != 2)
 			{
 				highestOrder = value;
 			}
@@ -186,7 +187,7 @@ wstring execute(list<wstring> &args, list<int> &argsOrder)
 		//iterates, finds basic operator, evals the args, drops literal args, pushes the result in place of the expression
 		for (int i = 0; i < size; i++)
 		{
-			if (argsOrder.front() == 3 && highestOrder == 3)
+			if (argsOrder.front() == 3 && highestOrder == 3 && argsArray[i] == L"*")
 			{
 				double arg1 = stod(wstring(argsArray[i-1].begin(), argsArray[i-1].end()));
 				double arg2 = stod(wstring(argsArray[i+1].begin(), argsArray[i+1].end()));
@@ -209,7 +210,7 @@ wstring execute(list<wstring> &args, list<int> &argsOrder)
 				argsOrder.clear();
 				pemdasMap(copyToArgs, &argsOrder);
 				break;
-			} else if (argsOrder.front() == 4 && highestOrder == 4)
+			} else if (argsOrder.front() == 3 && highestOrder == 3 && argsArray[i] == L"/")
 			{
 				double arg1 = stod(wstring(argsArray[i-1].begin(), argsArray[i-1].end()));
 				double arg2 = stod(wstring(argsArray[i+1].begin(), argsArray[i+1].end()));
@@ -232,7 +233,7 @@ wstring execute(list<wstring> &args, list<int> &argsOrder)
 				argsOrder.clear();
 				pemdasMap(copyToArgs, &argsOrder);
 				break;
-			} else if (argsOrder.front() == 5 && highestOrder == 5)
+			} else if (argsOrder.front() == 4 && highestOrder == 4 && argsArray[i] == L"+")
 			{
 				double arg1 = stod(wstring(argsArray[i-1].begin(), argsArray[i-1].end()));
 				double arg2 = stod(wstring(argsArray[i+1].begin(), argsArray[i+1].end()));
@@ -255,7 +256,7 @@ wstring execute(list<wstring> &args, list<int> &argsOrder)
 				argsOrder.clear();
 				pemdasMap(copyToArgs, &argsOrder);
 				break;
-			} else if (argsOrder.front() == 6 && highestOrder == 6)
+			} else if (argsOrder.front() == 4 && highestOrder == 4 && argsArray[i] == L"-")
 			{
 				double arg1 = stod(wstring(argsArray[i-1].begin(), argsArray[i-1].end()));
 				double arg2 = stod(wstring(argsArray[i+1].begin(), argsArray[i+1].end()));

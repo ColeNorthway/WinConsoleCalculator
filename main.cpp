@@ -100,7 +100,7 @@ int main()
 	wstring args;
 	
 	//sets the help
-	wcout << CSI << L"35m" << L"parentheses are allowed\npi = pi \ne = e\nmultiplication = *\ndivision = \\\naddition = +\nsubtraction = -\nfactorials = x!\nexponentials = x^y\nsquare roots = sqrt(x)\nlog of x = log(x)(y)\nnatural log = ln(x)\nlog base 10 = log10(x)\n" << RESET;
+	wcout << CSI << L"35m" << L"parentheses are allowed\nmultiplication = *\ndivision = \\\naddition = +\nsubtraction = -\nfactorials = x!\nexponentials = x^y\nsquare roots = sqrt(x)\nlog of x = log(x)(y)\nnatural log = ln(x)\nlog base 10 = log10(x)\n" << RESET;
 
 	while (true)
 	{

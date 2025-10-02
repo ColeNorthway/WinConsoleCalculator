@@ -1,33 +1,7 @@
-errors to check for
-- format
-- mismatching parent
-- Wrong parent format )(
-- amount capacity
-- Too many args
-
-Lowkey put all of the checkers into one function that takes the result as a reference
-- Sets that result eq to the message and returns false
-- loops through all of the possible errors
-
-
 bool formatCheck (std::wstring &args); DONE!!
 bool parenNumberCheck (std::list<std::wstring> &args);
 bool parenOrderCheck (std::list<std::wstring> &args); check if first isnt ) and last isnt (
+bool parenSplitCheck
 
-
-formatCheck wstring: DONE!!!
-- have a list of regex
-- check only one operator no ++ or -/ ---> (\+|-|\/|\*){2,}
-- check numbers must be separated by operators ---> ([0-9]|\.)+ ([0-9]|\.)+
-- check numbers cannot have more than one . split that shit and check
-- end like 1. ----> [0-9]{2,}\.
-- force sep args w/ spaces
-- check for sqrt(-)
-- check for char limit 150
-
-spaceFormat wstring: 8+8 -> 8 + 8
-
-
-implement formatCheck at the very beginning
-implement parenNumberCheck and parenOrderCheck after we do finalArgs
-then 
+all the parens need to be on final args
+all the others need to b

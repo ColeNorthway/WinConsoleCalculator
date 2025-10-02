@@ -1,0 +1,44 @@
+NESTED PARENTHESES
+WE COULD HAVE GONE 01 for () and -1 for CONSTANTS BUT TIME 
+
+
+Static Vars
+One static list of zeros and 1s
+- 0 = (
+- 1 = )
+
+One static list which maps next paren to call
+- basically the furthest consecutive 000 followed by a 1
+- The position is added to the list as the index of the furthest consectutive zero
+- It there isn't a furthest 0 and many contenders then we have to add each position of the highest set
+ex:
+
+0011
+1
+00110011
+1,5
+
+this will be a map based off of the order from pemdas map
+- Don't need to change pemdas map
+- make a new function called parenMap
+- then we alter the behavior of parenthesesConvert
+
+
+
+parenthesesConvert
+*Change pointers to references
+*For every 1 we increment a len counter (starts at -1)
+*if pos != next pos in paren positional map we default to push the current arg ofc
+*If that len counter == the front of the next parent positional map then we push that () to exec
+  *Make sure to pushthat to evaluatedParenArgs
+*clear the len counter
+*clear sepArgs
+  *we can push all of evaluatedParenArgs to sepArgs
+* Paren map and clear static variable
+* If parenMap isn't empty go back to mainLoop (beginning)
+* We exit this loop when the positional map is empty
+
+mainLoop : (jump point)
+    Loop
+exit: (exit point)
+    Exec final
