@@ -1,6 +1,7 @@
 This is a console calculator. This calculator requires a specific format that isn't hard to follow.
 
 Example:
+
 1 + (1 + 1)
 
 1 + (1 + (1 + (1 + 1)))
